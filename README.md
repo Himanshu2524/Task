@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+This is a simple React + TypeScript Todo App that allows users to manage their daily tasks with the following features:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✅ Core Features:
+Add New Tasks
 
-Currently, two official plugins are available:
+Users can enter a new task and add it to the list.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Each task is stored with a unique ID and text content.
 
-## Expanding the ESLint configuration
+Edit Existing Tasks
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Each task has an edit icon (✏️).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Clicking the edit button turns the task into an input field.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+After making changes, pressing Enter updates the task in the list.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Delete Tasks
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Each task has a delete icon (🗑️).
+
+Clicking it will remove that task from the list permanently.
+
+Mark Tasks as Done
+
+Each task has a checkbox.
+
+Checking the box can be used to mark the task as completed (e.g., with a strikethrough or style change).
+
+🧱 Tech Stack:
+React (Function Components & Hooks)
+
+TypeScript (for type safety)
+
+Tailwind CSS (for styling)
+
+React Icons (for UI icons like edit/delete)
+
+🧠 How It Works (Behind the Scenes):
+useState is used to manage the list of todos (todos) and local editing state (editthis, useedit).
+
+Each SingleTask component receives the todo and update function as props.
+
+When editing or deleting, setTodos is called to update the main task list.
+
+🎯 Possible Improvements (Optional):
+Add task filtering (All / Completed / Active)
+
+Save todos to localStorage
+
+Add due dates or priorities
+
+Dark mode toggle
